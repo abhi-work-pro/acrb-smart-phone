@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Checkout | AR Smart Phones</title>
+
+<link rel="stylesheet" href="css/checkout.css">
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+    <img src="ar_logo1st.png" alt="AR_Logo"> 
+    <h1>Smart Phones</h1>
+</div>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="laptops.html">Laptops</a>
+  <a href="wishlist.html">Wishlist</a>
+  <a href="cart.html">Cart</a>
+  <a href="login.html">Login</a>
+</nav>
+
+</header>
+
+<section class="checkout">
+
+  <h2>🛍 Checkout</h2>
+
+<div class="checkout-container">
+
+<!-- Address -->
+
+<div class="address">
+
+  <h3>📍 Delivery Address</h3>
+
+  <input type="text" placeholder="Full Name" required>
+
+  <input type="tel" placeholder="Mobile Number" required>
+
+  <input type="email" placeholder="Email Address">
+
+  <textarea placeholder="Full Address"></textarea>
+ 
+  <input type="text" placeholder="City">
+
+  <input type="text" placeholder="State">
+
+  <input type="text" placeholder="PIN Code">
+
+</div>
+
+<!-- Coupon -->
+
+<div class="coupon">
+
+  <h3>🎁 Coupon Code</h3>
+
+  <input type="text" placeholder="Enter Coupon Code">
+
+  <button>Apply Coupon</button>
+
+</div>
+
+<!-- Payment -->
+
+<div class="payment">
+
+  <h3>💳 Payment Method</h3>
+
+  <label><input type="radio" name="pay" checked> Cash on Delivery</label>
+
+  <label><input type="radio" name="pay"> UPI</label>
+
+  <label><input type="radio" name="pay"> Debit Card</label>
+
+  <label><input type="radio" name="pay"> Credit Card</label>
+
+  <label><input type="radio" name="pay"> Net Banking</label>
+
+  <label><input type="radio" name="pay"> Wallet</label>
+
+</div>
+
+<!-- Order Summary -->
+
+<div class="summary">
+
+  <h3>📦 Order Summary</h3>
+
+  <p>Items <span id="itemsPrice">₹0</span></p>
+
+  <p>Delivery <span>₹99</span></p>
+
+  <p>GST (18%) <span id="gstPrice">₹0</span></p>
+
+  <p>Discount <span id="discountPrice">₹0</span></p>
+
+  <hr>
+
+  <h2>Total <span id="totalPrice">₹0</span></h2>
+
+  <p>🚚 Estimated Delivery : 2-5 Days</p>
+
+</div>
+
+<div class="terms">
+
+<label>
+  <input type="checkbox" required>
+  I agree to the Terms & Conditions
+</label>
+
+</div>
+
+<div class="buttons">
+
+  <button onclick="history.back()">⬅ Back to Cart</button>
+
+  <button onclick="placeOrder()">✅ Place Order</button>
+
+</div>
+
+  <p class="secure">
+  🔒 100% Secure Payment
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+  <p>© 2026 AR Smart Phones. All Rights Reserved.</p>
+
+</footer>
+
+<script src="js/checkout.js"></script>
+
+</body>
+</html>

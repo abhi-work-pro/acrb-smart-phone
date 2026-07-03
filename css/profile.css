@@ -1,0 +1,376 @@
+/* ===========================
+   ACRB Smart Phones Profile
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    color:#333;
+}
+
+/* Header */
+
+header{
+    background:#0d6efd;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.logo h1{
+    font-size:28px;
+}
+
+.logo img{
+    width: 40px;
+    background: #fff;
+    border-radius: 50%;
+    border: 3px solid #ff9800;
+
+}
+nav{
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffc107;
+}
+
+/* Profile Page */
+
+.profile-page{
+    max-width:1300px;
+    margin:40px auto;
+    padding:20px;
+}
+
+/* Profile Card */
+
+.profile-card{
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    text-align:center;
+    padding:40px;
+    margin-bottom:35px;
+}
+
+.profile-card img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    border:5px solid #0d6efd;
+    object-fit:cover;
+}
+
+.profile-card h2{
+    margin-top:20px;
+    font-size:30px;
+}
+
+.profile-card p{
+    margin-top:8px;
+    color:#666;
+}
+
+.member{
+    margin-top:12px;
+    font-weight:bold;
+}
+
+#editProfile{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:8px;
+    background:#0d6efd;
+    color:#fff;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+}
+
+#editProfile:hover{
+    background:#0b5ed7;
+}
+
+/* ===========================
+   Account Summary
+=========================== */
+
+.account-summary{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:40px;
+}
+
+.summary-card{
+    background:#fff;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.summary-card:hover{
+    transform:translateY(-6px);
+}
+
+.summary-card h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+.summary-card p{
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* ===========================
+   Quick Actions
+=========================== */
+
+.quick-actions{
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    margin-bottom:40px;
+}
+
+.quick-actions h2{
+    margin-bottom:20px;
+    color:#0d6efd;
+}
+
+.actions-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.actions-grid a{
+    text-decoration:none;
+    background:#f8f9fa;
+    color:#333;
+    padding:18px;
+    border-radius:12px;
+    text-align:center;
+    font-weight:bold;
+    transition:.3s;
+    border:1px solid #ddd;
+}
+
+.actions-grid a:hover{
+    background:#0d6efd;
+    color:#fff;
+    transform:translateY(-5px);
+}
+
+/* ===========================
+   Settings
+=========================== */
+
+.settings{
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.settings h2{
+    margin-bottom:20px;
+    color:#0d6efd;
+}
+
+.setting-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+}
+
+.setting-item:last-child{
+    border-bottom:none;
+}
+
+.setting-item button,
+.setting-item select{
+    padding:10px 18px;
+    border:none;
+    border-radius:8px;
+    background:#0d6efd;
+    color:#fff;
+    cursor:pointer;
+}
+
+.setting-item select{
+    background:#fff;
+    color:#333;
+    border:1px solid #ccc;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+    background:#111827;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+@media(max-width:1024px){
+
+header{
+    padding:15px 20px;
+}
+
+.profile-page{
+    padding:15px;
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    text-align:center;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.profile-card{
+    padding:25px;
+}
+
+.profile-card img{
+    width:120px;
+    height:120px;
+}
+
+.profile-card h2{
+    font-size:24px;
+}
+
+.setting-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.setting-item button,
+.setting-item select{
+    width:100%;
+}
+
+}
+
+@media(max-width:480px){
+
+.logo h1{
+    font-size:22px;
+}
+
+.profile-card img{
+    width:100px;
+    height:100px;
+}
+
+.profile-card h2{
+    font-size:22px;
+}
+
+.summary-card p{
+    font-size:22px;
+}
+
+.actions-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+/* ===========================
+   Dark Mode Ready
+=========================== */
+
+body.dark{
+    background:#121212;
+    color:#fff;
+}
+
+body.dark .profile-card,
+body.dark .summary-card,
+body.dark .quick-actions,
+body.dark .settings{
+    background:#1e1e1e;
+    color:#fff;
+}
+
+body.dark .profile-card p{
+    color:#ccc;
+}
+
+body.dark .actions-grid a{
+    background:#2a2a2a;
+    color:#fff;
+    border-color:#444;
+}
+
+body.dark .actions-grid a:hover{
+    background:#0d6efd;
+}
+
+body.dark .setting-item{
+    border-color:#444;
+}
+
+body.dark .setting-item select{
+    background:#2a2a2a;
+    color:#fff;
+    border:1px solid #555;
+}
+
+body.dark footer{
+    background:#000;
+}
