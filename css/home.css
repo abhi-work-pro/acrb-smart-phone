@@ -1,4 +1,7 @@
-/* Reset */
+/* =========================
+   RESET
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -11,78 +14,121 @@ body{
     color:#333;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
 
 header{
     display:flex;
     justify-content:space-between;
     align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
     background:#0d6efd;
     color:#fff;
-    padding:15px 40px;
+    padding:15px 30px;
     position:sticky;
     top:0;
     z-index:1000;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-}
+/* =========================
+   LOGO
+========================= */
 
-h1 {
-    align-items: center;
+.logo{
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
 .logo img{
-    width: 40px;
-    background: #fff;
-    border-radius: 50%;
-    border: 3px solid #ff9800;
+    width:40px;
+    height:40px;
+    background:#fff;
+    border-radius:50%;
+    border:3px solid #ff9800;
 }
 
+.logo h1{
+    color:#fff;
+    font-size:24px;
+    margin:0;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
 .search{
+    flex:1;
+    max-width:550px;
+    min-width:250px;
     display:flex;
-    width:400px;
 }
 
 .search input{
-    width:100%;
-    padding:10px;
+    flex:1;
+    height:45px;
+    padding:0 15px;
     border:none;
     outline:none;
     border-radius:5px 0 0 5px;
 }
 
 .search button{
-    padding:10px 15px;
-    background:#ff9800;
-    color:#fff;
+    width:70px;
     border:none;
+    background:#1976d2;
+    color:#fff;
     cursor:pointer;
     border-radius:0 5px 5px 0;
 }
 
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:8px;
+}
+
 nav a{
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-width:85px;
+    height:38px;
+    padding:0 16px;
+    background:linear-gradient(135deg,#1ea4ff,#0066ff);
     color:#fff;
     text-decoration:none;
-    margin-left:20px;
-    font-weight:bold;
+    font-size:15px;
+    font-weight:600;
+    border-radius:25px;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+    transition:.3s ease;
 }
 
-nav a:hover{
-    color:yellow;
+nav a:hover,
+nav a.active{
+    background:linear-gradient(135deg,#0066ff,#0048cc);
+    transform:translateY(-2px);
 }
-
-/* Hero */
+/* =========================
+   HERO SECTION
+========================= */
 
 .hero{
     text-align:center;
     padding:80px 20px;
     background:linear-gradient(135deg,#0d6efd,#42a5f5);
-    color:white;
+    color:#fff;
 }
 
 .hero h2{
@@ -99,12 +145,14 @@ nav a:hover{
     border:none;
     border-radius:5px;
     background:#ff9800;
-    color:white;
+    color:#fff;
     cursor:pointer;
     font-size:18px;
 }
 
-/* Products */
+/* =========================
+   PRODUCTS
+========================= */
 
 .products{
     display:grid;
@@ -114,7 +162,7 @@ nav a:hover{
 }
 
 .card{
-    background:white;
+    background:#fff;
     padding:20px;
     border-radius:10px;
     box-shadow:0 5px 15px rgba(0,0,0,.15);
@@ -141,41 +189,206 @@ nav a:hover{
     margin-top:10px;
     padding:10px 20px;
     background:#0d6efd;
-    color:white;
+    color:#fff;
     border:none;
     border-radius:5px;
     cursor:pointer;
 }
 
+/* =========================
+   FOOTER
+========================= */
+
 footer{
     background:#111;
-    color:white;
+    color:#fff;
     text-align:center;
     padding:20px;
     margin-top:30px;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.hero{
+    padding:50px 15px;
+}
+
+.hero h2{
+    font-size:30px;
+}
+
+.hero p{
+    font-size:16px;
+}
+
+.products{
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    padding:15px;
+}
+
+.card{
+    padding:12px;
+}
+
+.card img{
+    height:150px;
+}
+
+.card h3{
+    font-size:16px;
+}
+
+.card p{
+    font-size:18px;
+}
+
+.card button{
+    width:100%;
+    padding:10px;
+}
+
+footer{
+    font-size:14px;
+    padding:15px;
+}
+
+}
+
+/* ===========================
+   HERO SLIDER
+=========================== */
+
+.hero-slider{
+    width:100%;
+    max-width:1920px;
+    aspect-ratio:1920/700;
+    margin:20px auto;
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.slides{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+
+.slide{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0;
+    transition:opacity .5s ease-in-out;
+}
+
+.slide.active{
+    opacity:1;
+    z-index:2;
+}
+
+.slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+/* Arrow Buttons */
+
+.prev,
+.next{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:rgba(0,0,0,.5);
+    color:#fff;
+    cursor:pointer;
+    font-size:22px;
+    z-index:10;
+}
+
+.prev{
+    left:15px;
+}
+
+.next{
+    right:15px;
+}
+
+/* Dots */
+
+.dots{
+    position:absolute;
+    bottom:15px;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    gap:10px;
+    z-index:10;
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+    background:#fff;
+    opacity:.5;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.dot.active{
+    opacity:1;
+    background:#ff6b00;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.hero-slider{
+    aspect-ratio:16/7;
+}
+
 }
 
 /* Mobile */
 
 @media(max-width:768px){
 
-header{
-    flex-direction:column;
-    gap:15px;
+.hero-slider{
+    aspect-ratio:22/8;
+    margin:10px;
+    border-radius:10px;
 }
 
-.search{
-    width:100%;
+.prev,
+.next{
+    width:38px;
+    height:38px;
+    font-size:18px;
 }
 
-nav{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+.dots{
+    bottom:10px;
 }
 
-.hero h2{
-    font-size:30px;
+.dot{
+    width:10px;
+    height:10px;
 }
 
 }

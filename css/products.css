@@ -67,17 +67,34 @@ header{
 
 nav{
     display:flex;
-    gap:20px;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-top:8px;
 }
 
 nav a{
-    color:white;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    min-width:85px;
+    height:38px;
+    padding:0 16px;
+    background:linear-gradient(135deg,#1ea4ff,#0066ff);
+    color:#fff;
     text-decoration:none;
-    font-weight:bold;
+    font-size:15px;
+    font-weight:600;
+    border-radius:25px;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+    transition:.3s ease;
 }
 
-nav a:hover{
-    color:#ffc107;
+nav a:hover,
+nav a.active{
+    background:linear-gradient(135deg,#0066ff,#0048cc);
+    transform:translateY(-2px);
 }
 
 /* Categories */
