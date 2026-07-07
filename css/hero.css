@@ -94,4 +94,8 @@
     .slider {
         height: 260px
     }
+
+    .hero {
+        width: 94%;
+    }
 }
