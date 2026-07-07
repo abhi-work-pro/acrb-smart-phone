@@ -98,4 +98,8 @@
     .hero {
         width: 94%;
     }
+
+    .arrow {
+        display: none;
+    }
 }
