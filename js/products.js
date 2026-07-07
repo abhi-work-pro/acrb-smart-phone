@@ -166,3 +166,21 @@ console.log("Products JS Loaded Successfully");
 console.log("Cards:", document.querySelectorAll(".card").length);
 console.log("Cart Buttons:", document.querySelectorAll(".cart-btn").length);
 console.log("Wishlist Buttons:", document.querySelectorAll(".wishlist-btn").length);
+
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+}
+
+window.onclick = function (e) {
+
+    if (!e.target.matches('.menu-btn')) {
+
+        let menu = document.getElementById("navMenu");
+
+        if (menu.classList.contains("active")) {
+            menu.classList.remove("active");
+        }
+
+    }
+
+}
