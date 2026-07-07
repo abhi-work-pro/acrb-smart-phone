@@ -33,6 +33,10 @@ header {
     margin-bottom: 20px;
 }
 
+.menu-btn {
+        display: none;
+    }
+
 /* =========================
    LOGO
 ========================= */
@@ -186,26 +190,6 @@ footer {
 ========================= */
 
 @media(max-width:768px) {
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        background: #0d6efd;
-        color: #fff;
-        padding: 15px 30px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        margin-bottom: 20px;
-    }
-
-    /* =========================
-   LOGO
-========================= */
-
     .logo {
         display: flex;
         justify-content: center;
@@ -224,10 +208,6 @@ footer {
     .logo h1 {
         display: none;
     }
-
-    /* =========================
-   SEARCH
-========================= */
 
     .search {
         flex: 1;
@@ -254,29 +234,50 @@ footer {
         border-radius: 0 5px 5px 0;
     }
 
-    /* =========================
-   NAVIGATION
-========================= */
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+
+    .menu-btn {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+        margin-right: 15px;
+        user-select: none;
+    }
 
     nav {
+        position: absolute;
+        top: 70px;
+        left: 15px;
+        width: 220px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
         display: none;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 999;
+    }
+
+    nav.active {
+        display: flex;
     }
 
     nav a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        min-width: 85px;
-        height: 38px;
-        padding: 0 16px;
-        background: linear-gradient(135deg, #1ea4ff, #0066ff);
-        color: #fff;
+        padding: 15px;
         text-decoration: none;
-        font-size: 15px;
-        font-weight: 600;
-        border-radius: 25px;
-        box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
-        transition: .3s ease;
+        color: #333;
+        border-bottom: 1px solid #eee;
+        transition: .3s;
+    }
+
+    nav a:hover {
+        background: #f2f2f2;
+        color: #007bff;
     }
 }
 

@@ -34,3 +34,20 @@ if (searchBtn) {
     });
 }
 
+function toggleMenu() {
+    document.getElementById("navMenu").classList.toggle("active");
+}
+
+window.onclick = function(e){
+
+    if(!e.target.matches('.menu-btn')){
+
+        let menu = document.getElementById("navMenu");
+
+        if(menu.classList.contains("active")){
+            menu.classList.remove("active");
+        }
+
+    }
+
+}
