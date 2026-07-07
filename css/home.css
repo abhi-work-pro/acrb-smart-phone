@@ -211,22 +211,21 @@ footer {
 
     .search {
         flex: 1;
-        max-width: 550px;
-        min-width: 250px;
+        min-width: 50%;
         display: flex;
     }
 
     .search input {
         flex: 1;
         height: 45px;
-        padding: 0 15px;
+        padding: 0px;
         border: none;
         outline: none;
         border-radius: 5px 0 0 5px;
     }
 
     .search button {
-        width: 70px;
+        width: 50px;
         border: none;
         background: #1976d2;
         color: #fff;
@@ -245,7 +244,6 @@ footer {
         display: block;
         font-size: 30px;
         cursor: pointer;
-        margin-right: 15px;
         user-select: none;
     }
 
