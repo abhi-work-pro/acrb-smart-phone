@@ -11,28 +11,113 @@ if (shopBtn) {
     });
 }
 
-// Search Button
-const searchBtn = document.querySelector(".search button");
+  
+    // ===============================
+// Professional Search System
+// ===============================
 
-if (searchBtn) {
-    searchBtn.addEventListener("click", function () {
+const searchInput = document.getElementById("searchInput");
+const searchBtn = document.getElementById("searchBtn");
+const suggestions = document.getElementById("suggestions");
+const cards = document.querySelectorAll(".card");
 
-        const searchInput = document.querySelector(".search input");
+function searchProducts() {
 
-        if (!searchInput) return;
+    const value = searchInput.value.toLowerCase().trim();
 
-        const searchText = searchInput.value.trim();
+    suggestions.innerHTML = "";
 
-        if (searchText === "") {
-            alert("Please enter a phone name.");
-            return;
+    let found = 0;
+
+    cards.forEach(card => {
+
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const image = card.querySelector("img").getAttribute("src");
+
+        if (title.includes(value)) {
+
+            card.style.display = "block";
+            found++;
+
+            if (value !== "") {
+
+                const item = document.createElement("div");
+                item.className = "suggestion-item";
+
+                item.innerHTML = 
+                    <img src="${image}" alt="">
+                    <span>${card.querySelector("h3").textContent}</span>
+                ;
+
+                item.onclick = function () {
+
+                    searchInput.value = card.querySelector("h3").textContent;
+
+                    cards.forEach(c => c.style.display = "none");
+
+                    card.style.display = "block";
+
+                    suggestions.style.display = "none";
+
+                    card.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                };
+
+                suggestions.appendChild(item);
+
+            }
+
+        } else {
+
+            card.style.display = "none";
+
         }
 
-        window.location.href =
-            "products.html?search=" + encodeURIComponent(searchText);
-
     });
+
+    if (value === "") {
+
+        cards.forEach(card => card.style.display = "block");
+        suggestions.style.display = "none";
+
+    } else {
+
+        suggestions.style.display = found ? "block" : "none";
+
+    }
+
 }
+
+// Live Search
+searchInput.addEventListener("input", searchProducts);
+
+// Enter Search
+searchInput.addEventListener("keydown", function (e) {
+
+    if (e.key === "Enter") {
+
+        searchProducts();
+
+    }
+
+});
+
+// Search Icon
+searchBtn.addEventListener("click", searchProducts);
+
+// Hide Suggestions
+document.addEventListener("click", function (e) {
+
+    if (!document.querySelector(".search").contains(e.target)) {
+
+        suggestions.style.display = "none";
+
+    }
+
+});
 
 function toggleMenu() {
     document.getElementById("navMenu").classList.toggle("active");
