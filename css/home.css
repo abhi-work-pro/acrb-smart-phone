@@ -145,7 +145,7 @@ nav {
     margin-top: 8px;
 }
 
-nav a {
+#nav a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -162,8 +162,8 @@ nav a {
     transition: .3s ease;
 }
 
-nav a:hover,
-nav a.active {
+#nav a:hover,
+#nav a.active {
     background: linear-gradient(135deg, #0066ff, #0048cc);
     transform: translateY(-2px);
 }
@@ -459,4 +459,55 @@ body{
     .bottom-nav {
         display: none;
     }
+}
+
+/* Bottom Nav Icon Fix */
+.bottom-nav a{
+    flex:1;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
+    text-decoration:none;
+    color:#444;
+    position:relative;
+}
+
+.bottom-nav a i{
+    font-size:22px !important;
+    display:block !important;
+    width:auto !important;
+    height:auto !important;
+    line-height:1 !important;
+    margin-bottom:4px !important;
+}
+
+.bottom-nav a span{
+    font-size:12px;
+    line-height:1;
+}
+
+.bottom-nav a.active{
+    color:#1565ff;
+}
+
+/* Bottom nav link fix */
+.bottom-nav a,
+.bottom-nav a:link,
+.bottom-nav a:visited,
+.bottom-nav a:hover,
+.bottom-nav a:active,
+.bottom-nav a:focus{
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.bottom-nav a span{
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.bottom-nav .nav-item.active::after{
+    display: none !important;
 }
