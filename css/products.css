@@ -66,7 +66,7 @@ header {
     font-size: 18px;
 }
 
-nav {
+#nav {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +75,7 @@ nav {
     margin-top: 8px;
 }
 
-nav a {
+#nav a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -92,8 +92,8 @@ nav a {
     transition: .3s ease;
 }
 
-nav a:hover,
-nav a.active {
+#nav a:hover,
+#nav a.active {
     background: linear-gradient(135deg, #0066ff, #0048cc);
     transform: translateY(-2px);
 }
@@ -278,7 +278,7 @@ footer p {
         user-select: none;
     }
 
-    nav {
+    #nav {
         position: absolute;
         top: 61.2px;
         left: 0px;
@@ -293,11 +293,11 @@ footer p {
         z-index: 999;
     }
 
-    nav.active {
+    #nav.active {
         display: flex;
     }
 
-    nav a {
+    #nav a {
         background: none;
         color: #333;
         border-radius: 0px;
@@ -305,11 +305,11 @@ footer p {
         transition: .3s ease;
     }
 
-    nav a i {
+    #nav a i {
         margin-right: 10px;
     }
 
-    nav a:hover {
+    #nav a:hover {
         background: #f2f2f2;
         color: #007bff;
     }
@@ -323,4 +323,162 @@ footer p {
         grid-template-columns: repeat(4, 1fr);
     }
 
+}
+
+/* ===== Bottom Navigation ===== */
+
+body{
+    padding-bottom:70px;
+}
+
+.bottom-nav{
+    position:fixed !important;
+    bottom:0 !important;
+    left:0 !important;
+    right:0 !important ;
+    top:auto !important;
+    width:100%;
+    height:65px;
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-top: 1px solid #ddd;
+    box-shadow:0 -2px 10px rgba(0,0,0,.15);
+    border-top:1px solid #e5e5e5;
+    z-index:999999;
+}
+
+.bottom-nav .nav-item{
+    flex:1;
+    text-align:center;
+    text-decoration:none;
+    color:#444;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition:.3s;
+}
+
+.bottom-nav .nav-item i{
+    font-size:26px;
+    margin-bottom:4px;
+}
+
+.bottom-nav .nav-item span{
+    font-size:13px;
+    font-weight:500;
+}
+
+.bottom-nav .nav-item.active{
+    color:#8320f3;
+}
+
+.bottom-nav .nav-item.active::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    width:34px;
+    height:4px;
+    background:#1565ff;
+    border-radius:10px;
+}
+
+.badge{
+    position:absolute;
+    top:8px;
+    right:22%;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ff3b30;
+    color:#fff;
+    font-size:11px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+@media (max-width:480px){
+
+.bottom-nav{
+    height:70px;
+}
+
+.bottom-nav .nav-item i{
+    font-size:24px;
+}
+
+.bottom-nav .nav-item span{
+    font-size:12px;
+}
+
+}
+
+/* Mobile और Tablet पर दिखे */
+@media screen and (max-width: 1024px) {
+    .bottom-nav {
+        display: flex;
+    }
+}
+
+/* Desktop और Laptop पर छिपे */
+@media screen and (min-width: 1025px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+/* Bottom Nav Icon Fix */
+.bottom-nav a{
+    flex:1;
+    display:flex !important;
+    flex-direction:column !important;
+    justify-content:center !important;
+    align-items:center !important;
+    text-decoration:none;
+    color:#444;
+    position:relative;
+}
+
+.bottom-nav a i{
+    font-size:22px !important;
+    display:block !important;
+    width:auto !important;
+    height:auto !important;
+    line-height:1 !important;
+    margin-bottom:4px !important;
+}
+
+.bottom-nav a span{
+    font-size:12px;
+    line-height:1;
+}
+
+.bottom-nav a.active{
+    color:#1565ff;
+}
+
+/* Bottom nav link fix */
+.bottom-nav a,
+.bottom-nav a:link,
+.bottom-nav a:visited,
+.bottom-nav a:hover,
+.bottom-nav a:active,
+.bottom-nav a:focus{
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.bottom-nav a span{
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+.bottom-nav .nav-item.active::after{
+    display: none !important;
 }
