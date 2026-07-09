@@ -92,7 +92,7 @@
 
 @media(max-width:768px) {
     .slider {
-        height: 260px
+        height: 260px;
     }
 
     .hero {
